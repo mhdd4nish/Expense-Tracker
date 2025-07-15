@@ -1,0 +1,249 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #7B2D26;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Poppins;
+    
+}
+.container{
+    margin: 20px;
+    padding: 1rem;
+    text-align: center;
+    width: 70% ;
+    background-color: #EEEBD3;
+    border-radius: 12px;
+    min-width: 50%;
+}
+.container h2{
+    margin-bottom: 20px;
+    font-size:2rem;
+}
+.dash{
+    /* background: linear-gradient(135deg, #A6E9A3, #8FCA8D); */
+    background-color: #EDADA8;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 20px;
+    
+}
+
+.dashes{
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.income, .expenses{
+    border-radius: 12px;
+    background-color: #EEEBD3;
+    width: 40%;
+    min-width: 30%;
+    padding: 10px;
+    transition: all 0.2s ease;
+}
+.income h3, .income p{
+    color: #00916E;
+}
+.dash h3{
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.expenses h3, .expenses p{
+    color: #FA0000;
+}
+p {
+    margin: 10px;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.expenses:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(227, 11, 11, 0.485);
+}
+.income:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(19, 158, 6, 0.485);
+}
+.dash2{
+    display: flex;
+    justify-content: space-around;
+
+}
+.transaction{
+    text-align: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+#transaction-list{
+    margin-top: 10px;
+    list-style: none;
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 8px;
+    flex-grow: 1;
+}
+#transaction-list::-webkit-scrollbar{
+    width: 8px;
+}
+#transaction-list::-webkit-scrollbar-track{
+    background-color: #f1f1f1;
+    border-radius: 4px;
+}
+#transaction-list::-webkit-scrollbar-thumb{
+    background-color: #cbd5e0;
+    border-radius: 4px;
+}
+#transaction-list::-webkit-scrollbar-thumb:hover{
+    background-color: #a0aec0;
+}
+
+.entry{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.2rem;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+    border-right: 5px solid;
+    animation: slideIn 0.3s ease;
+}
+.entry:hover{
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.entry.income{
+    border-right-color: #00916E;
+}
+
+.entry.expense{
+    border-right-color: #FA0000;
+}
+@keyframes slideIn {
+    from{
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+.entry .delete-btn{
+    background: none;
+    border: none;
+    color:#FA0000;
+    cursor: pointer;
+    font-size: 1.4rem;
+    opacity: 0;
+    transition: all 0.2sec ease;
+    padding: 4px;
+    border-radius: 4px;
+    margin-left: 12px;
+}
+.entry:hover .delete-btn{
+    opacity: 1;
+}
+.entry .delete-btn:hover{
+    background-color: #fee2e2;
+    transform: scale(1, 1);
+}
+
+.addTrans{
+    text-align: left;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #D8D5C0;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+label{
+    display:block;
+    margin-top:10px;
+    font-size: 1.1rem;
+}
+input{
+    padding: 5px;
+    display:block;
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.2 ease;
+}
+input:focus{
+    outline: none;
+    border-color: lightblue;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+
+}
+small{
+    display:block;
+}
+
+button[type="submit"]{
+    font-size: 1rem;
+    width: 100%;
+    border-radius: 8px;
+    padding: 8px;
+    border: none;
+    color: white;
+    background-color: #006616;
+    font-weight: 600;
+    margin-top: 10px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+button[type="submit"]:hover{
+    transform: translateY(-2px);
+    background-color: lightgreen;
+    color: rgb(24, 24, 24)
+}
+button[type="submit"]:active{
+    transform: translateY(0)
+}
+
+@media (max-width: 900px){
+    .dash2{
+        flex-direction: column;
+    }
+    .transaction, .addTrans{
+        width:100%;
+    }
+    .container{
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        min-height: 100vh;
+    }
+}
+
+@media(max-width: 500px){
+    .dashes{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .income, .expenses{
+        width: 100%;
+    }
+
+}
