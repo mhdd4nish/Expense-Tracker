@@ -222,7 +222,7 @@ button[type="submit"]:active{
     transform: translateY(0)
 }
 
-@media (max-width: 900px){
+@media (max-width: 1050px){
     .dash2{
         flex-direction: column;
     }
